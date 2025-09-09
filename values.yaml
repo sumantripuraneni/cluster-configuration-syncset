@@ -1,0 +1,69 @@
+clusterDeploymentName: wh-example-cluster
+clusterNamespace: wh-example-cluster
+
+catalogs:
+  - name: my-redhat-catalog
+    image: mirror.example.com/my-redhat-operator-index:latest
+  - name: my-certified-catalog
+    image: mirror.example.com/my-certified-operator-index:latest
+  - name: my-community-catalog
+    image: mirror.example.com/my-community-operator-index:latest
+
+imageDigestMirrorSets:
+  - name: idms-redhat-operators
+    mirrors:
+      - source: registry.redhat.io/container-native-virtualization
+        mirrors:
+          - example.com/nautilus/container-native-virtualization
+      - source: registry.redhat.io/openshift4
+        mirrors:
+          - example.com/nautilus/openshift4
+      - source: registry.redhat.io/openshift-logging
+        mirrors:
+          - example.com/nautilus/openshift-logging
+      - source: registry.redhat.io/openshift-pipelines
+        mirrors:
+          - example.com/nautilus/openshift-pipelines
+      - source: registry.redhat.io/cert-manager
+        mirrors:
+          - example.com/nautilus/cert-manager
+      - source: registry.redhat.io/rhacm2
+        mirrors:
+          - example.com/nautilus/rhacm2
+      - source: registry.redhat.io/compliance
+        mirrors:
+          - example.com/nautilus/compliance
+
+  - name: idms-certified-operators
+    mirrors:
+      - source: docker.io/openpolicyagent
+        mirrors:
+          - example.com/nautilus/openpolicyagent
+      - source: registry.redhat.io/openshift4
+        mirrors:
+          - example.com/nautilus/openshift4
+      - source: registry.redhat.io/openshift-logging
+        mirrors:
+          - example.com/nautilus/openshift-logging
+
+  - name: idms-dell-csm
+    mirrors:
+      - source: quay.io/dell/container-storage-modules/dell-csm-opertaor
+        mirrors:
+          - example.com/nautilus/dellemc/dell-conatiner-storage-modules
+      - source: registry.redhat.io/openshift4
+        mirrors:
+          - example.com/nautilus/dellemc
+      - source: quay.io/dell/container-storage-modules
+        mirrors:
+          - example.com/nautilus/dellemc
+
+  - name: idms-eso-operator
+    mirrors:
+      - source: quay.io/community-operator-pipeline-prod
+        mirrors:
+          - example.com/nautilus/community-operator-pipeline-prod
+      - source: ghcr.io/external-secrets
+        mirrors:
+          - example.com/nautilus/external-secrets
+

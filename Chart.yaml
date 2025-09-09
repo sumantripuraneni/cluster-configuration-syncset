@@ -1,0 +1,4 @@
+apiVersion: v2
+name: cluster-configuration-syncset
+description: SyncSets for OperatorHub config, CatalogSources, and ImageDigestMirrorSet
+version: 0.1.1
