@@ -1,5 +1,4 @@
-clusterDeploymentName: wh-example-cluster
-clusterNamespace: wh-example-cluster
+cluster: wh-example-cluster
 
 catalogs:
   - name: my-redhat-catalog

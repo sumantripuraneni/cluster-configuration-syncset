@@ -2,10 +2,10 @@ apiVersion: hive.openshift.io/v1
 kind: SyncSet
 metadata:
   name: operatorhub-and-catalogs
-  namespace: {{ .Values.clusterNamespace }}
+  namespace: {{ .Values.cluster }}
 spec:
   clusterDeploymentRefs:
-    - name: {{ .Values.clusterDeploymentName }}
+    - name: {{ .Values.cluster }}
   resourceApplyMode: Sync
   resources:
     # Disable all default sources in OperatorHub

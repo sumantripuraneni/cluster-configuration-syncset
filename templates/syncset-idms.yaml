@@ -2,10 +2,10 @@ apiVersion: hive.openshift.io/v1
 kind: SyncSet
 metadata:
   name: imagedigestmirrorsets
-  namespace: {{ .Values.clusterNamespace }}
+  namespace: {{ .Values.cluster }}
 spec:
   clusterDeploymentRefs:
-    - name: {{ .Values.clusterDeploymentName }}
+    - name: {{ .Values.cluster }}
   resourceApplyMode: Sync
   resources:
 {{- range .Values.imageDigestMirrorSets }}
